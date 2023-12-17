@@ -1,0 +1,41 @@
+spring:
+  jpa:
+    open-in-view: false
+    show-sql: true
+    hibernate:
+      ddl-auto: none
+  datasource:
+    username: delivery_store_app
+    password: app123!@#
+    url: "jdbc:mysql://localhost:3306/delivery_store?useSSL=false&allowPublicKeyRetrieval=true"
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  kafka:
+    bootstrap-servers: localhost:9092
+    consumer:
+      group-id: delivery-payment-group
+
+server:
+  port: 20001
+  role-name: delivery-store-api
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+    prometheus:
+      enabled: true
+
+external:
+  apis:
+    sever:
+      delivery-order-api:
+        host: http://localhost:40001/apis
+        orders: /orders
+        order-ids: /order-ids
+        order-detail: /orders/%d
+
+jwt:
+  key: fastcampus-education-kotlin-project
+  access-token-expiration: 3600000
+  refresh-token-expiration: 86400000

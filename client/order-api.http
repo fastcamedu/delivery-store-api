@@ -1,0 +1,15 @@
+### 매장의 주문 조회
+GET http://localhost:20001/apis/stores/7/orders
+
+### 매장의 주문 상세 정보 조회
+GET http://localhost:20001/apis/stores/1/orders/7
+
+### 매장의 주문 수락
+PUT http://localhost:20001/apis/stores/orders/status
+Content-Type: application/json
+
+{
+  "orderId": 1,
+  "storeId": 7,
+  "storeOrderCommand" : "READY"
+}

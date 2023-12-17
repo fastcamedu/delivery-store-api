@@ -1,0 +1,16 @@
+POST http://localhost:20001/kafka/publish
+Content-Type: application/json
+
+{
+  "storeId": 1,
+  "orderId": 7,
+  "orderShortenId": "XDS12D",
+  "orderUUID": "ADFKADFASDF",
+  "paymentId": 1,
+  "customerId": 3,
+  "orderAmount": 10000,
+  "deliveryFee": 3000,
+  "discountAmount": 2000,
+  "promotionFee": 0,
+  "payAmount": 11000
+}
